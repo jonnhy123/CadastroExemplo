@@ -68,7 +68,7 @@ public class ContatoModel extends AbstractTableModel {
 		
 		// return "inexistente";
 		throw new RuntimeException("Coluna " + column +
-				" solicitada, n√£o existe.");
+				" solicitada, n„o existe.");
 	}
 
 	public void adicionar(Contato c) {

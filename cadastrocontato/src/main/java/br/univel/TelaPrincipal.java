@@ -23,9 +23,25 @@ public class TelaPrincipal extends TelaPrincipalBase {
 		limparCampos();
 		configurarBotoes();
 		configuraTabela();
+		configurarMemus();
 	}
 
-	
+	private void configurarMemus() {
+		super.mntmImprimir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ReportManager rm = new ReportManager();
+			}
+		});
+		super.mntmExportarPdf.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+	}
+
+
 	private void configuraTabela() {
 		
 		ContatoDao dao = new ContatoDao();
@@ -41,7 +57,7 @@ public class TelaPrincipal extends TelaPrincipalBase {
 				if (e.getClickCount() == 2) {
 					int idx = table.getSelectedRow();
 					if (idx < 0) {
-						System.out.println("NÃ£o hÃ¡ linha selecionada");
+						System.out.println("Não há linha selecionada");
 					} else {
 						System.out.println("Linha " + idx);
 						carregarLinha(idx);

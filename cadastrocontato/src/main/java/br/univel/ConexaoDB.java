@@ -50,7 +50,7 @@ public final class ConexaoDB {
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		throw new CloneNotSupportedException("SÃ³ haver um!");
+		throw new CloneNotSupportedException("Só pode haver um.");
 	}
 	
 }

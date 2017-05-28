@@ -20,18 +20,19 @@ public class Comum {
 	
 	public static void main(String[] args) {
 		
-		String file = "C:\\Users\\fernandod\\JaspersoftWorkspace\\MyReports\\HelloJasper2.jasper";
+		String file = "C:\\Users\\User-01\\JaspersoftWorkspace\\MyReports\\HelloJasper.jasper";
 		
 		JasperPrint jasperPrintPDF;
 		try {
 			Connection con = ConexaoDB.getInstance().getConnection();
-			
+			//Preenche
 			jasperPrintPDF = JasperFillManager.fillReport(file, null, con);
 			Locale locale = Locale.getDefault();
+			//Mostrar com JasperView
 			JasperViewer.viewReport(jasperPrintPDF, false, locale);
-			
+			//exporta para PDF
 			JasperExportManager.exportReportToPdfFile(jasperPrintPDF, "teste.pdf");
-			
+			//
 			Desktop.getDesktop().open(new File("teste.pdf"));
 			
 			

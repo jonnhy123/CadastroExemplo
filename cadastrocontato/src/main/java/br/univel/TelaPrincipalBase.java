@@ -14,10 +14,13 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class TelaPrincipalBase extends JFrame {
 
-	protected static final String CARREGADO_PARA_ALTERACAO = "Carregado para alteraÃ§Ã£o";
+	protected static final String CARREGADO_PARA_ALTERACAO = "Carregado para alteração";
 	private JPanel contentPane;
 	protected JTextField txfId;
 	protected JTextField txfNome;
@@ -27,6 +30,10 @@ public class TelaPrincipalBase extends JFrame {
 	protected JButton btnSalvar;
 	protected JButton btnExcluir;
 	protected JLabel labelAlerta;
+	private JMenuBar menuBar;
+	private JMenu mnArquivo;
+	protected JMenuItem mntmImprimir;
+	protected JMenuItem mntmExportarPdf;
 
 	/**
 	 * Create the frame.
@@ -34,6 +41,18 @@ public class TelaPrincipalBase extends JFrame {
 	public TelaPrincipalBase() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		mnArquivo = new JMenu("Arquivo");
+		menuBar.add(mnArquivo);
+		
+		mntmImprimir = new JMenuItem("Imprimir");
+		mnArquivo.add(mntmImprimir);
+		
+		mntmExportarPdf = new JMenuItem("Exportar PDF");
+		mnArquivo.add(mntmExportarPdf);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
